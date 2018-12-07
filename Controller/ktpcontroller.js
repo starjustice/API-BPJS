@@ -5,9 +5,9 @@ exports.read_a_ktp = function(req, res) {
     if (err) res.send(err);
     else {
       if (task[0] == null) {
-        res.status(400).send({ error: true, message: "Ktp not found" });
+        res.send({ error: true, message: "Ktp not found" });
       } else {
-        res.json(task);
+        res.json({error : false, data: task});
       }
     }
   });
